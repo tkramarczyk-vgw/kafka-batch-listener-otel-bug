@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender class="ch.qos.logback.core.ConsoleAppender" name="CONSOLE">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                [%mdc] %d{HH:mm:ss.SSS} %highlight(%level) %yellow(%logger{20}): %msg %n
+            </Pattern>
+        </layout>
+    </appender>
+
+
+    <logger name="org.apache.kafka" level="WARN"/>
+    <logger name="io.opentelemetry" level="TRACE"/>
+    <logger name="io.opentelemetry.exporter.internal.http.HttpExporter" level="ERROR"/>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
